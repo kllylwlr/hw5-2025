@@ -24,8 +24,6 @@ window.addEventListener("load", function() {
 	//DEBUG - check if autoplay attribute was removed
 	console.log(video);
 
-	// turn off auto looping ----------------------------------------
-
 });
 
 // Play --------------------------------------------------------------------------------------
@@ -36,6 +34,10 @@ document.querySelector("#play").addEventListener("click", function() {
 	video.play();
 	// update volume information based on volume slider
 	video.volume = document.querySelector("#slider").value/100;
+	// set loop to false
+	video.loop = false;
+	// update text
+	document.querySelector("#volume").innerHTML = video.volume*100+"%";
 
 });
 
@@ -111,9 +113,12 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 	// check if muted or not
 	// if video is currently muted (volume 0)
-	if (curr_vol === 0) {
+	if (video.muted === true) {
 		// unmute
-		video.volume = 1;
+		//video.volume = 1;
+		
+		//update muted value
+		video.muted === false;
 		// update button text to 'Mute'
 		document.querySelector("#mute").innerHTML= "Mute";
 		//console.log("Muted!")
@@ -123,7 +128,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 	// if video not muted
 	else {
 		//mute it (set volume to 0)
-		video.volume = 0;
+		//video.volume = 0;
+
+		// update muted value
+		video.muted === true;
+
 		// update button text to 'unmute'
 		document.querySelector("#mute").innerHTML = "Unmute";
 		//console.log("Unmuted!")
