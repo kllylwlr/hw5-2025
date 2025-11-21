@@ -136,7 +136,7 @@ document.querySelector("#slider").addEventListener("click", function() {
 	//DEBUG - check what new value is
 	//console.log("Updated value of slider is "+this.value)
 	//update volume based on new slider input
-	video.volume = (this.value)/100;
+	video.volume = this.value/100;
 	// update volume text
 	document.querySelector("#volume").innerHTML = video.volume*100+"%";
 });
