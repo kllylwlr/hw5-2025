@@ -114,24 +114,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 	// check if muted or not
 	// if video is currently muted (volume 0)
 	if (video.muted === true) {
-		// unmute
-		//video.volume = 1;
-		
 		//update muted value
-		video.muted === false;
+		video.muted = false;
 		// update button text to 'Mute'
 		document.querySelector("#mute").innerHTML= "Mute";
-		//console.log("Muted!")
-
 
 	}
 	// if video not muted
 	else {
-		//mute it (set volume to 0)
-		//video.volume = 0;
-
 		// update muted value
-		video.muted === true;
+		video.muted = true;
 
 		// update button text to 'unmute'
 		document.querySelector("#mute").innerHTML = "Unmute";
